@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Page() {
     return (
-        <main className="flex flex-col md:flex-row bg-gradient-to-b from-amber-100 to-green-600 gap-y-20 md:gap-y-2">
+        <main className="flex flex-col bg-gradient-to-b from-amber-100 to-green-600 gap-y-20 md:gap-y-2">
             <div className="flex md:flex-row-reverse flex-col-reverse items-center justify-center ">
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}   // starting state

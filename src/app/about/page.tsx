@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 function Page() {
     return (
-        <main className="bg-gradient-to-b from-amber-100 to-green-600">
-            <div className="flex flex-row-reverse items-center justify-center ">
+        <main className="flex flex-col md:flex-row bg-gradient-to-b from-amber-100 to-green-600 gap-y-20 md:gap-y-2">
+            <div className="flex md:flex-row-reverse flex-col-reverse items-center justify-center ">
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}   // starting state
                     animate={{ opacity: 1, x: 0 }}    // end state
                     transition={{ duration: 1, ease: "easeOut" }} // timing
-                    className="text-3xl flex flex-col items-center justify-center text-center gap-y-20 w-1/2">
-                    <span className="text-6xl font-semibold"> ❓ لماذا نتعلم القرآن </span>
-                    <span className="text-4xl flex-wrap w-2/3">
+                    className="text-3xl flex flex-col items-center justify-center text-center md:gap-y-20 gap-y-10 md:w-1/2 w-full">
+                    <span className="md:text-6xl text-4xl font-semibold"> ❓ لماذا نتعلم القرآن </span>
+                    <span className="md:text-4xl text-2xl flex-wrap md:w-2/3 w-full">
                         القرآن ليس كتابًا عاديًا، بل هو رسالة خالدة تحمل معاني الرحمة، الحكمة، والسكينة. تعلمه يفتح أبواب الفهم العميق ويقوي الصلة بالله تعالى
                     </span>
                 </motion.div>
@@ -29,15 +29,15 @@ function Page() {
                     />
                 </motion.div>
             </div>
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex md:flex-row flex-col-reverse items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}   // starting state
                     animate={{ opacity: 1, x: 0 }}    // end state
                     transition={{ duration: 1, ease: "easeOut" }} // timing
-                    className="text-3xl flex flex-col items-center justify-center text-center gap-y-20 w-1/2">
-                    <span className="text-6xl font-semibold"> 🤲 الفوائد الروحية لتعلم القرآن
+                    className="text-3xl flex flex-col items-center justify-center text-center md:gap-y-20 gap-y-10 md:w-1/2 w-full ">
+                    <span className="md:text-6xl text-4xl font-semibold"> 🤲 الفوائد الروحية لتعلم القرآن
                     </span>
-                    <span className="text-4xl flex-wrap w-auto">
+                    <span className="md:text-4xl text-2xl flex-wrap w-auto">
                         <div>
                             طمأنينة القلب: يزرع السكينة ويخفف القلق
 
@@ -69,15 +69,15 @@ function Page() {
                     />
                 </motion.div>
             </div >
-            <div className="flex flex-row-reverse items-center justify-center">
+            <div className="flex md:flex-row-reverse flex-col-reverse items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}   // starting state
                     animate={{ opacity: 1, x: 0 }}    // end state
                     transition={{ duration: 1, ease: "easeOut" }} // timing
-                    className="text-3xl flex flex-col items-center justify-center text-center gap-y-20 w-1/2">
-                    <span className="text-6xl font-semibold"> 🌐 مميزات التصميم الحديث
+                    className="text-3xl flex flex-col items-center justify-center text-center md:gap-y-20 gap-y-10 md:w-1/2 w-full">
+                    <span className="md:text-6xl text-4xl font-semibold"> 🌐 مميزات التصميم الحديث
                     </span>
-                    <div className="text-4xl flex-wrap w-auto flex flex-col list-inside">
+                    <div className="md:text-4xl text-2xl flex-wrap w-auto flex flex-col list-inside">
                         <div >
                             واجهة أنيقة: ألوان هادئة وخطوط واضحة لراحة العين
 
@@ -108,7 +108,6 @@ function Page() {
                 </motion.div>
             </div >
         </main>
-
     )
 }
 

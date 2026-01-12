@@ -13,11 +13,11 @@ function Page() {
   }
 
   return (
-    <div className='flex flex-row-reverse w-full h-full px-24 justify-center items-cente gap-x-8'>
-      <div className='flex flex-col w-1/2 gap-y-12 items-center justify-center'>
+    <div className='flex flex-col md:flex-row-reverse w-full h-full md:px-24 justify-center items-cente md:gap-x-8 p-4'>
+      <div className='flex flex-col w-full md:w-1/2 gap-y-12 items-center justify-center'>
         <AnimatePresence mode='wait'>
           {isLoginMode ? <motion.div initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}
-            className='flex flex-col gap-y-12 items-center justify-center w-3/4' key="login">
+            className='flex flex-col gap-y-12 items-center justify-center w-full ' key="login">
             <span className='text-3xl'>تسجيل دخول المستخدم</span>
             <form className='flex h-auto text-xl flex-col w-full text-right p-8 gap-4 border-2 border-green-800 rounded-3xl' onSubmit={(e) => submitForm(e)}>
               <label> البريد الالكتروني</label>
@@ -29,7 +29,7 @@ function Page() {
               <button className='hover:underline text-gray-800 ml-auto text-lg mx-auto'>  ليس لديك حساب؟ <span className='font-bold'>انشاء حساب جديد</span></button>
             </form>
           </motion.div> : <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: "easeIn" }}
-              className='flex flex-col gap-y-12 items-center justify-center w-3/4' key="register">
+              className='flex flex-col gap-y-12 items-center justify-center w-full md:w-3/4' key="register">
             <span className='text-3xl'> انساء حساب جديد </span>
             <form className='flex h-auto text-xl flex-col w-full text-right p-8 gap-4 border-2 border-green-800 rounded-3xl' onSubmit={(e) => submitForm(e)}>
               <label>اسم المستخدم</label>
@@ -54,7 +54,7 @@ function Page() {
       </div>
 
       <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}
-        className='w-1/2 h-full flex border-r-2 border-green-800 my-24'>
+        className='hidden md:flex w-full md:w-1/2 h-full md:border-r-2 border-green-800 my-24'>
         <Image
           src="/LoginIllustration.png"
           alt="paryer"
@@ -63,7 +63,6 @@ function Page() {
           className='m-auto'
         />
       </motion.div>
-
     </div>
   )
 }

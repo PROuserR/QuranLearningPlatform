@@ -29,7 +29,7 @@ function Navbar() {
         </Link>
       </div>
 
-      <div className='flex flex-col w-auto gap-y-1 mr-auto' onClick={toggleMenu}>
+      <div className='flex flex-col md:hidden w-auto gap-y-1 mr-auto' onClick={toggleMenu}>
         <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
         <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
         <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>

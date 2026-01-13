@@ -12,7 +12,8 @@
     "motion": "^12.23.26",
     "next": "14.2.17",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "recharts": "^3.6.0"
   },
   "devDependencies": {
     "@types/node": "^20",

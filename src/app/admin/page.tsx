@@ -22,15 +22,15 @@ const data2 = [
   { name: 'Remaining', value: 60 },
 ];
 
-const COLORS = ['#00FF00', '#2E8B57']; // Indigo + Amber
+const COLORS = ['#4ade80', '#166534'];
 
 
 
 function Page() {
   return (
-    <main className='flex flex-col w-full p-8 gap-y-8'>
+    <main className='flex flex-col w-full gap-y-8 text-green-800'>
       <section className='flex flex-col ml-auto text-end w-auto gap-y-8 mb-8'>
-        <span className='font-bold text-6xl'>
+        <span className='font-bold text-4xl'>
           لوحة التحكم
         </span>
         <span className='font-semibold text-2xl'>
@@ -44,42 +44,57 @@ function Page() {
               <span className=''> عدد الطلاب  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الاساتذة  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد المشرفين  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الحلقات  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الدروس  </span>
               <span className='font-bold'> 322 </span>
             </div>
-            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الاعلانات  </span>
               <span className='font-bold'> 192 </span>
             </div>
-            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
+          </div>
+          <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
+            <div className='flex flex-row-reverse items-center justify-center w-full px-8'>
+              <span className='text-end'> عدد طلبات الاساتذة للانضمام  </span>
+              <span className='font-bold'> 34 </span>
+            </div>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
+
+          </div>
+          <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+              <span className='text-center'> ايقاف حساب مؤقتا </span>
+            </div>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </button>
+
           </div>
         </div>
         <div className='flex flex-col w-3/5 h-[1000px] p-4 gap-6'>
@@ -106,7 +121,6 @@ function Page() {
 
           <div className='text-green-800 text-end'>
             احصائيات مالية
-
           </div>
           <ResponsiveContainer width="100%" height="45%" className="rounded-3xl">
             <PieChart>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="p-2 flex md:flex-row-reverse flex-col-reverse items-center justify-center">
+    <main className="flex md:flex-row-reverse flex-col-reverse items-center justify-center">
       <motion.section
         initial={{ opacity: 0, x: 100 }}   // starting state
         animate={{ opacity: 1, x: 0 }}    // end state
@@ -33,7 +33,6 @@ export default function Home() {
           height={800}
         />
       </motion.section>
-
     </main>
   );
 }

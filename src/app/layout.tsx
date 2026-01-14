@@ -25,7 +25,10 @@ export default function RootLayout({
         className={`${changa.className} antialiased bg-amber-100 text-green-900`}
       >
         <Navbar />
-        {children}
+        <div className="p-8">
+          {children}
+        </div>
+
       </body>
     </html>
   );

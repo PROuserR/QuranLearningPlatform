@@ -44,47 +44,47 @@ function Page() {
               <span className=''> عدد الطلاب  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <span className='mx-auto font-extralight p-4 bg-green-600 rounded-3xl'> عرض </span>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الاساتذة  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <span className='mx-auto font-extralight p-4 bg-green-600 rounded-3xl'> عرض </span>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد المشرفين  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <span className='mx-auto font-extralight p-4 bg-green-600 rounded-3xl'> عرض </span>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الحلقات  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <span className='mx-auto font-extralight p-4 bg-green-600 rounded-3xl'> عرض </span>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الدروس  </span>
               <span className='font-bold'> 322 </span>
             </div>
-            <span className='mx-auto font-extralight p-4 bg-green-600 rounded-3xl'> عرض </span>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
               <span className=''> عدد الاعلانات  </span>
               <span className='font-bold'> 192 </span>
             </div>
-            <span className='mx-auto font-extralight p-4 bg-green-600 rounded-3xl'> عرض </span>
+            <button className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl'> عرض </button>
           </div>
         </div>
         <div className='flex flex-col w-3/5 h-[1000px] p-4 gap-6'>
           <div className='flex w-full justify-center items-center px-2 text-green-800 text-end'>
-            <select className='text-end px-4 py-2 rounded-3xl mr-auto'>
+            <select className='text-end px-4 py-2 rounded-3xl mr-auto bg-green-50'>
               <option>استاذ</option>
               <option>مشرف</option>
               <option>طالب</option>
@@ -115,7 +115,7 @@ function Page() {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                label={({ name, percent = 1 }) => `${name} ${(percent * 100).toFixed(0)}%`}
                 outerRadius={150}
                 fill="#8884d8"
                 dataKey="value"

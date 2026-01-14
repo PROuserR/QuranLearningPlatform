@@ -12,8 +12,8 @@ export default function Home() {
         transition={{ duration: 1, ease: "easeOut" }} // timing
         className="text-3xl flex flex-col items-center justify-center text-center md:gap-y-20 md:w-1/2 w-full gap-y-12">
         <span className="md:text-6xl text-4xl font-semibold">تعلم القرآن الكريم عبر الانترنت</span>
-        <span className="md:text-4xl text-2xl flex-wrap md:w-2/3 w-full">
-          القرآن نورٌ للقلب، فاجعل تلاوته عادةً يومية تنير دربك
+        <span className="md:text-4xl text-2xl flex-wrap w-full whitespace-pre-line">
+          القرآن نورٌ للقلب، فاجعل تلاوته عادةً يومية تنير دربك <br/>
           من جعل القرآن رفيقًا له، وجد الطمأنينة في كل خطوة
         </span>
         <div className='flex flex-row-reverse gap-x-2 md:gap-x-12 text-lg md:text-2xl'>

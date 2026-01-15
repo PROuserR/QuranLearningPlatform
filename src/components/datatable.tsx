@@ -7,6 +7,8 @@ import {
     flexRender,
     getFilteredRowModel,
     ColumnDef,
+    ColumnSort,
+    ColumnFilter,
 } from '@tanstack/react-table';
 import { useState } from 'react';
 import { BsSearch } from "react-icons/bs";
@@ -56,10 +58,10 @@ const columns: ColumnDef<User>[] = [
 ];
 
 function DataTable() {
-    const [sorting, setSorting] = useState<any>([]);
+    const [sorting, setSorting] = useState<ColumnSort[]>([]);
     const [sortQuery, setSortQuery] = useState<string>("name");
     const [isAscending, setIsAscending] = useState<boolean>(true);
-    const [columnFilters, setColumnFilters] = useState<any>([]);
+    const [columnFilters, setColumnFilters] = useState<ColumnFilter[]>([]);
     const [filterQuery, setFilterQuery] = useState<string>("name");
     const [isFilterShown, setIsFilterShown] = useState<boolean>(false);
 

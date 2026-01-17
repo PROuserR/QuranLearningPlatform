@@ -24,6 +24,8 @@ type User = {
     isActive: string;
 };
 
+
+
 // Dummy data
 const users = [
     { id: '1', name: 'رامي', email: 'rami@example.com', createdAt: '2022/3/4', isActive: true ? 'نعم' : 'لا' },
@@ -69,6 +71,7 @@ function DataTable() {
         data: users,
         columns,
         state: { sorting, columnFilters },
+        columnResizeMode: "onChange",
         onSortingChange: setSorting,
         onColumnFiltersChange: setColumnFilters,
         getCoreRowModel: getCoreRowModel(),
@@ -105,8 +108,8 @@ function DataTable() {
 
     return (
         <main className='h-[75vh] w-full flex flex-col gap-y-8 '>
-            <section className="flex flex-row-reverse gap-x-8 w-full font-bold">
-                <div className="flex flex-row-reverse justify-center items-center gap-x-4 px-6 py-2 bg-green-50  border-green-800 rounded-3xl w-1/5">
+            <section className="flex flex-col gap-y-4 md:flex-row-reverse md:gap-x-8 w-full font-bold">
+                <div className="flex flex-row-reverse w-full md:w-1/5 justify-center items-center gap-x-4 px-6 py-2 bg-green-50  border-green-800 rounded-3xl">
                     <input type="text" placeholder="بحث" className="border-0 outline-none text-end bg-green-50 w-full h-full" onChange={(e) =>
                         table.getColumn(filterQuery)?.setFilterValue(e.target.value)}
                     />
@@ -126,9 +129,9 @@ function DataTable() {
                     </div>
                 </div>
 
-                <div className='flex mr-auto gap-x-4 bg-green-50  border-green-800 rounded-3xl p-2'>
+                <div className='flex ml-auto md:mr-auto md:ml-0 gap-x-4 bg-green-50  border-green-800 rounded-3xl p-2'>
                     <button className="flex w-auto items-center justify-center"><BsFunnel className="w-6 h-6" onClick={() => setIsFilterShown(!isFilterShown)} /></button>
-                    {isFilterShown ? <select className="bg-transparent flex items-center justify-center mr-auto w-auto outline-none text-center" onChange={handleFilterChange}>
+                    {isFilterShown ? <select className="bg-transparent flex items-center justify-center w-auto outline-none text-center" onChange={handleFilterChange}>
                         <option value="id"> الرقم التسلسلي  </option>
                         <option value="name"> اسم </option>
                         <option value="createdAt"> تاريخ </option>
@@ -136,8 +139,8 @@ function DataTable() {
                 </div>
             </section>
 
-            <table className="bg-amber-50 w-full h-full text-center">
-                <thead >
+            <table className="bg-amber-50 w-2/3 md:w-full mx-auto h-full text-center">
+                <thead>
                     {table.getHeaderGroups().map((headerGroup) => (
                         <tr key={headerGroup.id}>
                             {headerGroup.headers.map((header) => (
@@ -164,13 +167,12 @@ function DataTable() {
                 </tbody>
             </table>
 
-            {/* Pagination Controls */}
-            <section className='px-4 text-green-800 flex w-full items-center justify-end'>
-                <div className='font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl text-green-50 mr-auto'>
+            <section className='md:px-4 text-green-800 flex w-full items-center justify-end'>
+                <div className='font-extralight p-2 md:p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl text-green-50 mr-auto'>
                     <button> اضافة طالب </button>
                 </div>
 
-                <div>
+                <div className='flex w-auto ml-auto'>
                     <button
                         onClick={() => table.nextPage()}
                         disabled={!table.getCanNextPage()}
@@ -189,7 +191,6 @@ function DataTable() {
                     </button>
                 </div>
             </section>
-
         </main>
 
     )

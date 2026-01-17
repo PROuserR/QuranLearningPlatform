@@ -11,31 +11,9 @@ function Navbar() {
   }
 
   return (
-    <nav className='text-lg md:text-2xl w-full bg-green-800 text-green-50 md:px-4 md:py-2 p-2 flex flex-row-reverse items-center justify-center'>
-      <Link href="/">منصة تعليم القرآن الكريم</Link>
-      <Image
-        src="/Quran.png" // path relative to public folder
-        alt="Quran"
-        width="64"
-        height="64"
-        className='hidden md:flex'
-      />
-      <div className='hidden md:flex flex-row items-center justify-center md:gap-x-8 gap-x-2 mr-auto'>
-        <Link href="/login" className='hover:underline'>
-          تسجيل الدخول
-        </Link>
-        <Link href="/about" className='hover:underline'>
-          حول
-        </Link>
-      </div>
+    <nav className='text-lg md:text-2xl w-full bg-green-800 text-green-50 flex flex-row-reverse items-center justify-center'>
 
-      <div className='flex flex-col md:hidden w-auto gap-y-1 mr-auto' onClick={toggleMenu}>
-        <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
-        <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
-        <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
-      </div>
-
-      {isMenuShown ? <div className='h-screen w-screen left-0 top-0 text-4xl bg-green-400 absolute z-10 flex flex-col'>
+      {isMenuShown ? <div className='h-screen w-screen p-0 left-0 top-0 text-4xl bg-green-400 absolute z-10 flex flex-col'>
         <div className='flex flex-row-reverse w-full items-center px-4'>
           <Image
             src="/Quran.png" // path relative to public folder
@@ -56,7 +34,31 @@ function Navbar() {
           <Link href="/login" onClick={toggleMenu}>تسجيل الدخول</Link>
           <Link href="/about" onClick={toggleMenu}>حول</Link>
         </motion.div>
-      </div> : null}
+      </div> :
+        <div className='w-full flex flex-row-reverse items-center md:px-4 md:py-2 p-2 '>
+          <Link href="/">منصة تعليم القرآن الكريم</Link>
+          <Image
+            src="/Quran.png" // path relative to public folder
+            alt="Quran"
+            width="64"
+            height="64"
+            className='hidden md:flex'
+          />
+          <div className='hidden md:flex flex-row items-center justify-center md:gap-x-8 gap-x-2 mr-auto'>
+            <Link href="/login" className='hover:underline'>
+              تسجيل الدخول
+            </Link>
+            <Link href="/about" className='hover:underline'>
+              حول
+            </Link>
+          </div>
+
+          <div className='flex flex-col md:hidden w-auto gap-y-1 mr-auto' onClick={toggleMenu}>
+            <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
+            <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
+            <div className='flex w-6 bg-green-50 py-[1px] px-3'></div>
+          </div>
+        </div>}
 
     </nav>
   )

@@ -2,32 +2,68 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { PieChart, Pie, Cell } from 'recharts';
 import Link from 'next/link';
+import { useState, useEffect, ChangeEvent } from "react";
 
-const data = [
-  { name: 'محرم', number: 7 },
-  { name: 'صفر', number: 286 },
-  { name: 'ربيع الاول', number: 200 },
-  { name: 'ربيع الاخر', number: 176 },
-  { name: 'جمادى الاولى', number: 7 },
-  { name: 'جمادى الاخرة', number: 286 },
-  { name: 'رجب', number: 200 },
-  { name: 'شعبان', number: 176 },
-  { name: 'رمضان', number: 7 },
-  { name: 'شوال', number: 286 },
-  { name: 'ذو القعدة', number: 0 },
-  { name: 'ذو الحجة', number: 0 },
-];
+type ScreenSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
-const data2 = [
-  { name: 'Completed', value: 40 },
-  { name: 'Remaining', value: 60 },
-];
-
-const COLORS = ['#4ade80', '#166534'];
-
-
+type Month = {
+  name: string;
+  number: number;
+}
 
 function Page() {
+  const data = [
+    { name: 'محرم', number: 7 },
+    { name: 'صفر', number: 286 },
+    { name: 'ربيع الاول', number: 200 },
+    { name: 'ربيع الاخر', number: 176 },
+    { name: 'جمادى الاولى', number: 7 },
+    { name: 'جمادى الاخرة', number: 286 },
+    { name: 'رجب', number: 200 },
+    { name: 'شعبان', number: 176 },
+    { name: 'رمضان', number: 7 },
+    { name: 'شوال', number: 286 },
+    { name: 'ذو القعدة', number: 0 },
+    { name: 'ذو الحجة', number: 0 },
+  ];
+
+  const data2 = [
+    { name: 'Completed', value: 40 },
+    { name: 'Remaining', value: 60 },
+  ];
+
+  const COLORS = ['#4ade80', '#166534'];
+
+  const [screenSize, setScreenSize] = useState<ScreenSize>("xs");
+  const [dataToBeDisplayed, setDataToBeDisplayed] = useState<Array<Month>>(data.slice(0, 6));
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) setScreenSize("xs");
+      else if (width < 768) setScreenSize("sm");
+      else if (width < 1024) setScreenSize("md");
+      else if (width < 1280) setScreenSize("lg");
+      else if (width < 1536) setScreenSize("xl");
+      else setScreenSize("2xl");
+    };
+
+    // Run once on mount
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handlePieChart = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    if (value == "first-half") {
+      setDataToBeDisplayed(data.slice(0, 6))
+    }
+    if (value == "second-half") {
+      setDataToBeDisplayed(data.slice(5, 12))
+    }
+  }
+
   return (
     <main className='flex flex-col w-full gap-y-8 text-green-800'>
       <section className='flex flex-col ml-auto text-end w-auto gap-y-8 mb-8'>
@@ -41,76 +77,66 @@ function Page() {
       <section className='flex flex-col md:flex-row text-sm md:text-xl text-green-50 gap-y-8 md:gap-x-8 h-full'>
         <div className='w-full md:w-2/5 h-full grid grid-cols-2 gap-x-6 gap-y-12 text-end'>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
-            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className=''> عدد الطلاب  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <Link href="admin/students" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
-            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className=''> عدد الاساتذة  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <Link href="admin/teachers" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/teachers" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
-            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className=''> عدد المشرفين  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <Link href="admin/admins" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/admins" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
-            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className=''> عدد الحلقات  </span>
               <span className='font-bold'> 221 </span>
             </div>
-            <Link href="admin/courses" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/courses" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
-            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className=''> عدد الدروس  </span>
               <span className='font-bold'> 322 </span>
             </div>
-            <Link href="admin/lessons" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/lessons" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
-            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className=''> عدد الاعلانات  </span>
               <span className='font-bold'> 192 </span>
             </div>
-            <Link href="admin/issues" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/issues" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full px-8'>
-              <span className='text-end'> عدد طلبات الاساتذة للانضمام  </span>
+              <span className='text-end'> عدد طلبات للانضمام  </span>
               <span className='font-bold'> 34 </span>
             </div>
-            <Link href="admin/requests" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/requests" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
 
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
-            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-24'>
+            <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className='text-center'> ايقاف حساب مؤقتا </span>
             </div>
-            <Link href="admin/students" className='mx-auto font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+            <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
 
           </div>
         </div>
-        <div className='flex flex-col w-full md:w-3/5 h-[1000px] py-4 md:px-4 gap-y-6 md:gapx-6'>
-          <div className='flex w-full justify-center items-center px-2 text-green-800 text-end'>
-            <select className='text-end px-4 py-2 rounded-3xl mr-auto bg-green-50'>
-              <option>استاذ</option>
-              <option>مشرف</option>
-              <option>طالب</option>
-            </select>
-            <span>
-              احصائيات المستخدمين
-            </span>
-          </div>
-          <ResponsiveContainer width="100%" height="45%" className="rounded-3xl text-sm">
-            <BarChart data={data}>
+        <div className='flex flex-col w-full md:w-3/5 h-[1000px] py-4 md:px-4 gap-y-6 md:gap-x-6'>
+          {screenSize == "xs" ? <ResponsiveContainer width="100%" height="45%" className="rounded-3xl">
+            <BarChart data={data.slice(0, 4)}>
               <CartesianGrid strokeDasharray="1 1" />
               <XAxis dataKey="name" interval={0} />
               <YAxis />
@@ -118,12 +144,43 @@ function Page() {
               <Legend />
               <Bar dataKey="number" fill="#166534" />
             </BarChart>
-          </ResponsiveContainer>
+          </ResponsiveContainer> : <div className='flex flex-col w-full h-full text-green-800 gap-y-8'>
+            <div className='flex flex-row-reverse gap-x-8 items-center text-green-800'>
+              <div className='flex w-1/2 justify-center items-center px-2 text-green-800 text-end'>
+                <select className='text-end px-4 py-2 rounded-3xl mr-auto bg-green-50'>
+                  <option>استاذ</option>
+                  <option>مشرف</option>
+                  <option>طالب</option>
+                </select>
+                <span>
+                  احصائيات المستخدمين
+                </span>
+              </div>
+              <div className='flex flex-row-reverse items-center w-1/2'>
+                <span className=''> اختيار الوقت </span>
+                <select className='text-end px-4 py-2 rounded-3xl bg-green-50 mr-auto' onChange={(e) => handlePieChart(e)}>
+                  <option value="first-half"> النصف الاول </option>
+                  <option value="second-half"> النصف الثاني </option>
+                </select>
+              </div>
+            </div>
 
-          <div className='text-green-800 text-end'>
+            <ResponsiveContainer width="100%" height="100%" className="rounded-3xl">
+              <BarChart data={dataToBeDisplayed}>
+                <CartesianGrid strokeDasharray="1 1" />
+                <XAxis dataKey="name" interval={0} />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="number" fill="#166534" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>}
+
+          <span className='text-green-800 text-end'>
             احصائيات مالية
-          </div>
-          <ResponsiveContainer width="100%" height="45%" className="rounded-3xl">
+          </span>
+          <ResponsiveContainer width="100%" height="100%" className="rounded-3xl">
             <PieChart>
               <Pie
                 data={data2}
@@ -147,7 +204,6 @@ function Page() {
         </div>
       </section>
     </main>
-
   )
 }
 

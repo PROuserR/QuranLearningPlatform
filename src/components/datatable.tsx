@@ -110,7 +110,7 @@ function DataTable() {
         <main className='h-[75vh] w-full flex flex-col gap-y-8 '>
             <section className="flex flex-col gap-y-4 md:flex-row-reverse md:gap-x-8 w-full font-bold">
                 <div className="flex flex-row-reverse w-full md:w-1/5 justify-center items-center gap-x-4 px-6 py-2 bg-green-50  border-green-800 rounded-3xl">
-                    <input type="text" placeholder="بحث" className="border-0 outline-none text-end bg-green-50 w-full h-full" onChange={(e) =>
+                    <input type="text" placeholder="بحث" className="border-0 outline-none bg-green-50 w-full h-full" onChange={(e) =>
                         table.getColumn(filterQuery)?.setFilterValue(e.target.value)}
                     />
                     <BsSearch className="w-6 h-6" />

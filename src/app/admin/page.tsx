@@ -66,7 +66,7 @@ function Page() {
 
   return (
     <main className='flex flex-col w-full gap-y-8 text-green-800'>
-      <section className='flex flex-col ml-auto text-end w-auto gap-y-8 mb-8'>
+      <section className='flex flex-col ml-auto w-auto gap-y-8 mb-8'>
         <span className='font-bold text-4xl'>
           لوحة التحكم
         </span>
@@ -75,7 +75,7 @@ function Page() {
         </span>
       </section>
       <section className='flex flex-col md:flex-row text-sm md:text-xl text-green-50 gap-y-8 md:gap-x-8 h-full'>
-        <div className='w-full md:w-2/5 h-full grid grid-cols-2 gap-x-6 gap-y-12 text-end'>
+        <div className='w-full md:w-2/5 h-full grid grid-cols-2 gap-x-6 gap-y-12'>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
               <span className=''> عدد الطلاب  </span>
@@ -120,7 +120,7 @@ function Page() {
           </div>
           <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
             <div className='flex flex-row-reverse items-center justify-center w-full px-8'>
-              <span className='text-end'> عدد طلبات للانضمام  </span>
+              <span> عدد طلبات للانضمام  </span>
               <span className='font-bold'> 34 </span>
             </div>
             <Link href="admin/requests" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
@@ -146,8 +146,8 @@ function Page() {
             </BarChart>
           </ResponsiveContainer> : <div className='flex flex-col w-full h-full text-green-800 gap-y-8'>
             <div className='flex flex-row-reverse gap-x-8 items-center text-green-800'>
-              <div className='flex w-1/2 justify-center items-center px-2 text-green-800 text-end'>
-                <select className='text-end px-4 py-2 rounded-3xl mr-auto bg-green-50'>
+              <div className='flex w-1/2 justify-center items-center px-2 text-green-800' >
+                <select className='px-4 py-2 rounded-3xl mr-auto bg-green-50'>
                   <option>استاذ</option>
                   <option>مشرف</option>
                   <option>طالب</option>
@@ -158,7 +158,7 @@ function Page() {
               </div>
               <div className='flex flex-row-reverse items-center w-1/2'>
                 <span className=''> اختيار الوقت </span>
-                <select className='text-end px-4 py-2 rounded-3xl bg-green-50 mr-auto' onChange={(e) => handlePieChart(e)}>
+                <select className='px-4 py-2 rounded-3xl bg-green-50 mr-auto' onChange={(e) => handlePieChart(e)}>
                   <option value="first-half"> النصف الاول </option>
                   <option value="second-half"> النصف الثاني </option>
                 </select>
@@ -177,7 +177,7 @@ function Page() {
             </ResponsiveContainer>
           </div>}
 
-          <span className='text-green-800 text-end'>
+          <span className='text-green-800'>
             احصائيات مالية
           </span>
           <ResponsiveContainer width="100%" height="100%" className="rounded-3xl">

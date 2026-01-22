@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${changa.className} antialiased bg-amber-100 text-green-900`}
+        className={`${changa.className} antialiased bg-amber-100 text-green-900 text-end`}
       >
         <Navbar />
         <div className="md:p-8 p-4">

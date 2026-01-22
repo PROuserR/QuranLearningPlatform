@@ -41,7 +41,7 @@ function Page() {
               <label>تأكيد كلمة المرور</label>
               <input type='password' className='rounded-full p-2' />
               <label>  نوع المستخدم </label>
-              <select className='text-end px-4 py-2 rounded-3xl'>
+              <select className='px-4 py-2 rounded-3xl'>
                 <option>استاذ</option>
                 <option>مشرف</option>
                 <option>طالب</option>

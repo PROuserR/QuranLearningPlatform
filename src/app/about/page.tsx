@@ -7,9 +7,9 @@ function Page() {
         <main className="flex flex-col absolute left-0 bg-gradient-to-b from-amber-100 to-green-600 gap-y-20 md:gap-y-2">
             <section className="flex md:flex-row-reverse flex-col-reverse items-center justify-center ">
                 <motion.div
-                    initial={{ opacity: 0, x: 100 }}   // starting state
+                    initial={{ opacity: 0, x: -100 }}   // starting state
                     animate={{ opacity: 1, x: 0 }}    // end state
-                    transition={{ duration: 1, ease: "easeOut" }} // timing
+                    transition={{ duration: 1, ease: "easeIn" }} // timing
                     className="text-3xl flex flex-col items-center justify-center text-center md:gap-y-20 gap-y-10 md:w-1/2 w-full">
                     <span className="md:text-6xl text-4xl font-semibold"> ❓ لماذا نتعلم القرآن </span>
                     <span className="md:text-4xl text-2xl flex-wrap md:w-2/3 w-full">
@@ -17,8 +17,8 @@ function Page() {
                     </span>
                 </motion.div>
                 <motion.div
-                    initial={{ opacity: 0, y: -100 }}   // starting state
-                    animate={{ opacity: 1, y: 0 }}    // end state
+                    initial={{ opacity: 0, x: -100 }}   // starting state
+                    animate={{ opacity: 1, x: 0 }}    // end state
                     transition={{ duration: 1, ease: "easeIn" }} // timing
                 >
                     <Image
@@ -29,6 +29,7 @@ function Page() {
                     />
                 </motion.div>
             </section>
+
             <section className="flex md:flex-row flex-col-reverse items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}   // starting state
@@ -69,6 +70,7 @@ function Page() {
                     />
                 </motion.div>
             </section >
+            
             <section className="flex md:flex-row-reverse flex-col-reverse items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}   // starting state

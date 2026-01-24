@@ -31,7 +31,7 @@ function Page({ params }: { params: { type: string } }) {
             default:
                 break;
         }
-    })
+    }, [params.type])
 
     return (
         <main className="w-full flex flex-col gap-y-8">

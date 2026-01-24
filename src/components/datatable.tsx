@@ -24,8 +24,6 @@ type User = {
     isActive: string;
 };
 
-
-
 // Dummy data
 const users = [
     { id: '1', name: 'رامي', email: 'rami@example.com', createdAt: '2022/3/4', isActive: true ? 'نعم' : 'لا' },
@@ -169,7 +167,7 @@ function DataTable() {
 
             <section className='md:px-4 text-green-800 flex w-full items-center justify-end'>
                 <div className='font-extralight p-2 md:p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl text-green-50 mr-auto'>
-                    <button> اضافة طالب </button>
+                    <button> اضافة </button>
                 </div>
 
                 <div className='flex w-auto ml-auto'>

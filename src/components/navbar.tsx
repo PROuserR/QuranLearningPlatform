@@ -51,6 +51,9 @@ function Navbar() {
             <Link href="/about" className='hover:underline'>
               حول
             </Link>
+            <Link href="/issues" className='hover:underline'>
+              الاعلانات
+            </Link>
           </div>
 
           <div className='flex flex-col md:hidden w-auto gap-y-1 mr-auto' onClick={toggleMenu}>

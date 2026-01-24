@@ -40,7 +40,7 @@ function Page() {
                     <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                         <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
                             <span className=''>
-                                التسميعات الحالية
+                                التسميعات المقبولة
                             </span>
                             <span className='font-bold'> 221 </span>
                         </div>

@@ -114,27 +114,31 @@ function DataTable() {
                     <BsSearch className="w-6 h-6" />
                 </div>
 
-                <div className="px-6 py-2 flex flex-row-reverse bg-green-50 border-green-800 rounded-3xl items-center justify-center gap-x-4">
-                    <span> ترتيب حسب </span>
-                    <select className="p-1 bg-transparent flex items-center justify-center mr-auto w-auto outline-none text-center" onChange={(e) => { handleSortChange(e); sortData(e.target.value) }}>
-                        <option value="id"> الرقم التسلسلي  </option>
-                        <option value="name"> اسم </option>
-                        <option value="createdAt"> تاريخ </option>
-                    </select>
-                    <div className='ml-auto cursor-pointer'>
-                        {isAscending ? <BsArrowUp className='w-6 h-6' onClick={() => { setIsAscending(false); sortData(sortQuery) }} />
-                            : <BsArrowDown className='w-6 h-6' onClick={() => { setIsAscending(true); sortData(sortQuery) }} />}
+                <div className='flex flex-row-reverse w-full gap-x-4'>
+                    <div className="px-6 py-2 flex flex-row-reverse w-auto bg-green-50 border-green-800 rounded-3xl items-center justify-center gap-x-4">
+                        <span> ترتيب حسب </span>
+                        <select className="p-1 bg-transparent flex items-center justify-center mr-auto w-auto outline-none text-center" onChange={(e) => { handleSortChange(e); sortData(e.target.value) }}>
+                            <option value="id"> الرقم التسلسلي  </option>
+                            <option value="name"> اسم </option>
+                            <option value="createdAt"> تاريخ </option>
+                        </select>
+                        <div className='ml-auto cursor-pointer'>
+                            {isAscending ? <BsArrowUp className='w-6 h-6' onClick={() => { setIsAscending(false); sortData(sortQuery) }} />
+                                : <BsArrowDown className='w-6 h-6' onClick={() => { setIsAscending(true); sortData(sortQuery) }} />}
+                        </div>
+                    </div>
+
+                    <div className='flex ml-auto md:mr-auto md:ml-0 gap-x-4 w-auto bg-green-50  border-green-800 rounded-3xl p-2'>
+                        <button className="flex w-auto items-center justify-center"><BsFunnel className="w-6 h-6" onClick={() => setIsFilterShown(!isFilterShown)} /></button>
+                        {isFilterShown ? <select className="bg-transparent flex items-center justify-center w-auto outline-none text-center" onChange={handleFilterChange}>
+                            <option value="id"> الرقم التسلسلي  </option>
+                            <option value="name"> اسم </option>
+                            <option value="createdAt"> تاريخ </option>
+                        </select> : null}
                     </div>
                 </div>
 
-                <div className='flex ml-auto md:mr-auto md:ml-0 gap-x-4 bg-green-50  border-green-800 rounded-3xl p-2'>
-                    <button className="flex w-auto items-center justify-center"><BsFunnel className="w-6 h-6" onClick={() => setIsFilterShown(!isFilterShown)} /></button>
-                    {isFilterShown ? <select className="bg-transparent flex items-center justify-center w-auto outline-none text-center" onChange={handleFilterChange}>
-                        <option value="id"> الرقم التسلسلي  </option>
-                        <option value="name"> اسم </option>
-                        <option value="createdAt"> تاريخ </option>
-                    </select> : null}
-                </div>
+
             </section>
 
             <table className="bg-amber-50 w-2/3 md:w-full mx-auto h-full text-center">

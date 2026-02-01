@@ -32,6 +32,7 @@ function Navbar() {
           className='flex flex-col text-center items-center justify-center w-full m-auto gap-y-12'>
           <Link href="/" onClick={toggleMenu}> الصفحة الرئيسية</Link>
           <Link href="/login" onClick={toggleMenu}>تسجيل الدخول</Link>
+          <Link href="/issues" onClick={toggleMenu}> الاعلانات </Link>
           <Link href="/about" onClick={toggleMenu}>حول</Link>
         </motion.div>
       </div> :

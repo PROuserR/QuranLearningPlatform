@@ -46,11 +46,11 @@ function Page() {
     <main className='flex flex-col w-full gap-y-8'>
       <section className='font-bold text-4xl'> لوحة الاستاذ </section>
 
-      <section className="flex flex-row gap-x-8">
-        <div className="flex flex-col gap-y-8 w-1/2">
+      <section className="flex flex-col md:flex-row md:gap-x-8 gap-y-8">
+        <div className="flex flex-col gap-y-8 w-full md:w-1/2">
           <div className='font-bold text-4xl'> الطلاب </div>
-          <div className='flex flex-row'>
-            <div className='flex flex-row-reverse w-full gap-x-8 text-green-50'>
+          <div className='flex'>
+            <div className='flex flex-col md:flex-row-reverse w-full gap-y-4 md:gap-x-8 text-green-50'>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
                   <span> جدول كل الطلاب </span>
@@ -79,8 +79,8 @@ function Page() {
             </div>
           </div>
           <div className='font-bold text-4xl'> الدروس </div>
-          <div className='flex flex-row'>
-            <div className='flex flex-row-reverse w-full gap-x-8 text-green-50'>
+          <div className='flex'>
+            <div className='flex flex-col md:flex-row-reverse w-full gap-y-4 md:gap-x-8 text-green-50'>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
                   <span> جدول كل الدروس </span>
@@ -108,10 +108,9 @@ function Page() {
               </div>
             </div>
           </div>
-
           <div className='font-bold text-4xl'> الدورات </div>
-          <div className='flex flex-row'>
-            <div className='flex flex-row-reverse w-full gap-x-8 text-green-50'>
+          <div className='flex'>
+            <div className='flex flex-col md:flex-row-reverse w-full gap-y-4 md:gap-x-8 text-green-50'>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
                   <span> جدول كل الدورات </span>
@@ -140,10 +139,11 @@ function Page() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-1/2 gap-y-8">
+
+        <div className="flex flex-col gap-y-8 w-full md:w-1/2 h-[500px]">
           <span className='font-bold text-4xl'> مخطط الوقت </span>
           <LineChart
-            style={{ width: '100%', height: '100%', maxHeight: '80vh'}}
+            style={{ width: '100%', height: '100%', maxHeight: '80vh' }}
             responsive
             data={data}
             margin={{
@@ -163,8 +163,6 @@ function Page() {
           </LineChart>
         </div>
       </section>
-
-
     </main>
   )
 }

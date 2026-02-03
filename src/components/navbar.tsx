@@ -31,7 +31,7 @@ function Navbar() {
           transition={{ duration: 1, ease: "easeOut" }} // timing
           className='flex flex-col text-center items-center justify-center w-full m-auto gap-y-12'>
           <Link href="/" onClick={toggleMenu}> الصفحة الرئيسية</Link>
-          <Link href="/login" onClick={toggleMenu}>تسجيل الدخول</Link>
+          <Link href="/auth" onClick={toggleMenu}>تسجيل الدخول</Link>
           <Link href="/issues" onClick={toggleMenu}> الاعلانات </Link>
           <Link href="/about" onClick={toggleMenu}>حول</Link>
         </motion.div>
@@ -46,7 +46,7 @@ function Navbar() {
             className='hidden md:flex'
           />
           <div className='hidden md:flex flex-row items-center justify-center md:gap-x-8 gap-x-2 mr-auto'>
-            <Link href="/login" className='hover:underline'>
+            <Link href="/auth" className='hover:underline'>
               تسجيل الدخول
             </Link>
             <Link href="/about" className='hover:underline'>

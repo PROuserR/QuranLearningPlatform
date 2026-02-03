@@ -17,7 +17,7 @@ export default function Home() {
           من جعل القرآن رفيقًا له، وجد الطمأنينة في كل خطوة
         </span>
         <div className='flex flex-row-reverse gap-x-2 md:gap-x-12 text-lg md:text-2xl'>
-          <Link href="/login" className='text-green-50 bg-green-900 rounded-full md:py-8 md:px-16 p-6'>ابدأ الآن</Link>
+          <Link href="/auth" className='text-green-50 bg-green-900 rounded-full md:py-8 md:px-16 p-6'>ابدأ الآن</Link>
           <Link href="/about" className='text-green-900 border-2 border-green-900 rounded-full md:py-8 md:px-16 p-6'> المزيد </Link>
         </div>
       </motion.section>

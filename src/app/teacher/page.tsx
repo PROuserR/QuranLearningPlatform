@@ -56,7 +56,7 @@ function Page() {
                   <span> جدول كل الطلاب </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
@@ -65,7 +65,7 @@ function Page() {
                   </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
@@ -74,7 +74,7 @@ function Page() {
                   </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ function Page() {
                   <span> جدول كل الدروس </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
@@ -95,7 +95,7 @@ function Page() {
                   </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
@@ -104,7 +104,7 @@ function Page() {
                   </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ function Page() {
                   <span> جدول كل الدورات </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
@@ -125,7 +125,7 @@ function Page() {
                   </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
               <div className='flex flex-col items-center justify-end w-full p-4 rounded-3xl bg-green-800 shadow-xl shadow-black gap-y-16'>
                 <div className='flex flex-row-reverse items-center justify-center w-full gap-x-4 md:gap-x-24'>
@@ -134,7 +134,7 @@ function Page() {
                   </span>
                   <span className='font-bold'> 221 </span>
                 </div>
-                <Link href="admin/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
+                <Link href="teacher/students" className='mx-auto text-center font-extralight p-4 bg-gradient-to-r from-green-500 to-green-700 rounded-3xl w-5/6'> عرض </Link>
               </div>
             </div>
           </div>
